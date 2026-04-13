@@ -14,8 +14,10 @@
 	import PlayerBar from "./organisms/PlayerBar.svelte";
 	import Playlist from "./organisms/Playlist.svelte";
 	import type { RepeatMode, Song } from "./types";
-
 	let state: MusicPlayerState = musicPlayerStore.getState();
+//#region 自定义配置
+
+//#endregion
 	const showFloatingPlayer = musicPlayerConfig.showFloatingPlayer;
 	const floatingEntryMode = musicPlayerConfig.floatingEntryMode ?? "default";
 	const useFabEntry = floatingEntryMode === "fab";
@@ -185,7 +187,6 @@
 	function canSkip(): boolean {
 		return musicPlayerStore.canSkip();
 	}
-
 	onMount(() => {
 		unsubscribe = musicPlayerStore.subscribe((nextState) => {
 			state = nextState;

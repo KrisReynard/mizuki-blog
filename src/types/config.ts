@@ -361,6 +361,8 @@ export interface MusicPlayerConfig {
     id: string; // 歌单ID
     server: string; // 音乐源服务器
     type: string; // 音乐类型
+    autoPlay?: boolean; // 是否在加载完成后自动播放
+    defaultPlayMode?: "random" | "repeat" | "repeat-one"; // 默认播放模式
 }
 
 export interface FooterConfig {

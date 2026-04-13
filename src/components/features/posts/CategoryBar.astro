@@ -159,8 +159,10 @@ const archiveUrl = url("/archive/");
 						"\\/\\d+$",
 				).test(pathname));
 
-		// 在首页、首页分页和归档页显示
-		if (!isHome && !isHomePagination && !isArchive) {
+		const isCategoryPage = pathname.startsWith('/category/');
+
+		// 在首页、首页分页、归档页和分类页显示
+		if (!isHome && !isHomePagination && !isArchive && !isCategoryPage) {
 			bar.style.display = "none";
 			return;
 		}
@@ -169,9 +171,18 @@ const archiveUrl = url("/archive/");
 		// 高亮当前分类
 		const pills = bar.querySelectorAll<HTMLAnchorElement>(".category-pill");
 		const params = new URLSearchParams(window.location.search);
-		const activeCategory = params.get("category") || "";
+		let activeCategory = params.get("category") || "";
 		const hasTag = params.has("tag");
 		const hasUncategorized = params.has("uncategorized");
+
+		// 处理 /category/xxx 路径的情况
+		if (pathname.startsWith('/category/')) {
+			const decodedPath = decodeURIComponent(pathname);
+			const match = decodedPath.match(/^\/category\/([^/]+)/);
+			if (match) {
+				activeCategory = match[1];
+			}
+		}
 
 		pills.forEach((pill) => pill.removeAttribute("data-active"));
 

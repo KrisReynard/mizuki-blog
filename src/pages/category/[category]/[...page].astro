@@ -1,0 +1,53 @@
+---
+import Pagination from "@components/control/Pagination.astro";
+import CategoryBar from "@components/features/posts/CategoryBar.astro";
+import PostPage from "@components/features/posts/PostPage.astro";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import type { GetStaticPaths } from "astro";
+
+import { siteConfig } from "../../../config";
+import { PAGE_SIZE } from "../../../constants/constants";
+import { getSortedPosts, getCategoryList } from "../../../utils/content-utils";
+import { initPostIdMap } from "../../../utils/permalink-utils";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+
+const showCategoryBar = siteConfig.postListLayout.categoryBar?.enable ?? false;
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const allBlogPosts = await getSortedPosts();
+	const categories = await getCategoryList();
+	// 初始化文章 ID 映射（用于 permalink 功能）
+	initPostIdMap(allBlogPosts);
+	
+	const uncategorizedKey = i18n(I18nKey.uncategorized);
+	
+	return categories.flatMap(category => {
+		const filteredPosts = allBlogPosts.filter(post => {
+			if (category.name === uncategorizedKey) {
+				return !post.data.category || post.data.category.trim() === '' || post.data.category.trim() === uncategorizedKey;
+			}
+			return post.data.category === category.name;
+		});
+		return paginate(filteredPosts, {
+			params: { category: category.name },
+			pageSize: PAGE_SIZE,
+		});
+	});
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const { category } = Astro.params;
+
+const len = page.data.length;
+---
+
+<MainGridLayout>
+	{showCategoryBar && <CategoryBar />}
+	<PostPage page={page} />
+	<Pagination
+		class="mx-auto onload-animation"
+		page={page}
+		style={`animation-delay: calc(var(--content-delay) + ${len * 50}ms)`}
+	/>
+</MainGridLayout>
