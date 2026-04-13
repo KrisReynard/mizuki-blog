@@ -205,9 +205,12 @@ class MusicPlayerStore {
         if (this.state.willAutoPlay || this.state.isPlaying) {
             const playPromise = this.audio?.play();
             if (playPromise !== undefined) {
-                playPromise.catch(() => {
+                playPromise.catch((e) => {
                     this.state.autoplayFailed = true;
                     this.state.isPlaying = false;
+                    this.state.showError = true;
+                    this.state.errorMessage = "自动播放失败，请点击页面以开始播放";
+                    this.broadcastState();
                 });
             }
         }
@@ -305,8 +308,12 @@ class MusicPlayerStore {
             this.state.isLoading = false;
 
             if (this.state.playlist.length > 0) {
+                const startIndex = musicPlayerConfig.defaultPlayMode === "random"
+                    ? Math.floor(Math.random() * this.state.playlist.length)
+                    : 0;
+                this.state.currentIndex = startIndex;
                 this.loadSong(
-                    this.state.playlist[0],
+                    this.state.playlist[startIndex],
                     musicPlayerConfig.autoPlay ?? false
                 );
             }
@@ -349,8 +356,12 @@ class MusicPlayerStore {
         if (this.state.playlist.length === 0) {
             this.showError("本地播放列表为空");
         } else {
+            const startIndex = musicPlayerConfig.defaultPlayMode === "random"
+                ? Math.floor(Math.random() * this.state.playlist.length)
+                : 0;
+            this.state.currentIndex = startIndex;
             this.loadSong(
-                this.state.playlist[0],
+                this.state.playlist[startIndex],
                 musicPlayerConfig.autoPlay ?? false
             );
         }

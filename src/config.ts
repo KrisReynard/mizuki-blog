@@ -57,9 +57,9 @@ export const siteConfig: SiteConfig = {
         // 顶栏标题文本
         text: "KrisReynard",
         // 顶栏标题图标路径，默认使用 public/assets/home/home.webp
-        icon: "assets/home/home.webp",
+        icon: "assets/home/myIcon/K.jpg",
         // 网站Logo图片路径
-        logo: "assets/home/default-logo.webp",
+        logo: "assets/home/myIcon/K.jpg",
     },
 
     // 页面自动缩放配置
@@ -118,7 +118,7 @@ export const siteConfig: SiteConfig = {
         // "mobile" = 仅在移动端显示
         // "desktop" = 仅在桌面端显示
         // "both" = 在所有设备上显示
-        showModeSwitchOnMobile: "desktop",
+        showModeSwitchOnMobile: "off",
     },
 
     banner: {
@@ -310,7 +310,7 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
     position: "center", // 壁纸位置，等同于 object-position
     carousel: {
         enable: true, // 启用轮播
-        interval: 5, // 轮播间隔时间（秒）
+        interval: 10, // 轮播间隔时间（秒）
     },
     zIndex: -1, // 层级，确保壁纸在背景层
     opacity: 0.8, // 壁纸透明度
