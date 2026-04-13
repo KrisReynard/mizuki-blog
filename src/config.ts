@@ -42,12 +42,12 @@ export const siteConfig: SiteConfig = {
     featurePages: {
         anime: false, // 番剧页面开关
         diary: true, // 日记页面开关
-        friends: true, // 友链页面开关
-        projects: true, // 项目页面开关
+        friends: false, // 友链页面开关
+        projects: false, // 项目页面开关
         skills: true, // 技能页面开关
         timeline: false, // 时间线页面开关
         albums: true, // 相册页面开关
-        devices: true, // 设备页面开关
+        devices: false, // 设备页面开关
     },
 
     // 顶栏标题配置
@@ -55,7 +55,7 @@ export const siteConfig: SiteConfig = {
         // 显示模式："text-icon" 显示图标+文本，"logo" 仅显示Logo
         mode: "text-icon",
         // 顶栏标题文本
-        text: "MizukiUI",
+        text: "KrisReynard",
         // 顶栏标题图标路径，默认使用 public/assets/home/home.webp
         icon: "assets/home/home.webp",
         // 网站Logo图片路径
@@ -112,7 +112,7 @@ export const siteConfig: SiteConfig = {
     // 壁纸模式配置
     wallpaperMode: {
         // 默认壁纸模式：banner=顶部横幅，fullscreen=全屏壁纸，none=无壁纸
-        defaultMode: "banner",
+        defaultMode: "fullscreen",
         // 整体布局方案切换按钮显示设置（默认："desktop"）
         // "off" = 不显示
         // "mobile" = 仅在移动端显示
@@ -125,16 +125,42 @@ export const siteConfig: SiteConfig = {
         // 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
         src: {
             desktop: [
-                "/assets/desktop-banner/1.webp",
-                "/assets/desktop-banner/2.webp",
-                "/assets/desktop-banner/3.webp",
-                "/assets/desktop-banner/4.webp",
+                "/assets/desktop-banner/背景/1.png",
+                "/assets/desktop-banner/背景/2.png",
+                "/assets/desktop-banner/背景/3.png",
+                "/assets/desktop-banner/背景/4.png",
+                "/assets/desktop-banner/背景/5.png",
+                "/assets/desktop-banner/背景/6.png",
+                "/assets/desktop-banner/背景/7.png",
+                "/assets/desktop-banner/背景/8.png",
+                "/assets/desktop-banner/背景/9.png",
+                "/assets/desktop-banner/背景/10.jpg",
+                "/assets/desktop-banner/背景/11.jpg",
+                "/assets/desktop-banner/背景/12.jpg",
+                "/assets/desktop-banner/背景/13.jpg",
+                "/assets/desktop-banner/背景/14.jpg",
+                "/assets/desktop-banner/背景/15.jpg",
+                "/assets/desktop-banner/背景/16.jpg",
+                "/assets/desktop-banner/背景/17.jpg",
             ], // 桌面横幅图片
             mobile: [
-                "/assets/mobile-banner/1.webp",
-                "/assets/mobile-banner/2.webp",
-                "/assets/mobile-banner/3.webp",
-                "/assets/mobile-banner/4.webp",
+                "/assets/desktop-banner/背景/1.png",
+                "/assets/desktop-banner/背景/2.png",
+                "/assets/desktop-banner/背景/3.png",
+                "/assets/desktop-banner/背景/4.png",
+                "/assets/desktop-banner/背景/5.png",
+                "/assets/desktop-banner/背景/6.png",
+                "/assets/desktop-banner/背景/7.png",
+                "/assets/desktop-banner/背景/8.png",
+                "/assets/desktop-banner/背景/9.png",
+                "/assets/desktop-banner/背景/10.jpg",
+                "/assets/desktop-banner/背景/11.jpg",
+                "/assets/desktop-banner/背景/12.jpg",
+                "/assets/desktop-banner/背景/13.jpg",
+                "/assets/desktop-banner/背景/14.jpg",
+                "/assets/desktop-banner/背景/15.jpg",
+                "/assets/desktop-banner/背景/16.jpg",
+                "/assets/desktop-banner/背景/17.jpg",
             ], // 移动横幅图片
         }, // 使用本地横幅图片
 
@@ -142,7 +168,7 @@ export const siteConfig: SiteConfig = {
 
         carousel: {
             enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
-            interval: 3, // 轮播间隔时间（秒）
+            interval: 5, // 轮播间隔时间（秒）
         },
 
         waves: {
@@ -173,7 +199,6 @@ export const siteConfig: SiteConfig = {
             ],
             typewriter: {
                 enable: true, // 启用副标题打字机效果
-
                 speed: 100, // 打字速度（毫秒）
                 deleteSpeed: 50, // 删除速度（毫秒）
                 pauseTime: 2000, // 完全显示后的暂停时间（毫秒）
@@ -182,7 +207,6 @@ export const siteConfig: SiteConfig = {
 
         credit: {
             enable: false, // 显示横幅图片来源文本
-
             text: "Describe", // 要显示的来源文本
             url: "", // （可选）原始艺术品或艺术家页面的 URL 链接
         },
@@ -194,10 +218,10 @@ export const siteConfig: SiteConfig = {
     toc: {
         enable: true, // 总开关，启用目录功能
         mobileTop: true, // 手机端顶部 TOC 按钮
-        desktopSidebar: true, // 电脑端右侧边栏 TOC
+        desktopSidebar: false, // 电脑端右侧边栏 TOC
         floating: true, // 悬浮 TOC 按钮
         depth: 2, // 目录深度，1-6，1 表示只显示 h1 标题，2 表示显示 h1 和 h2 标题，依此类推
-        useJapaneseBadge: true, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
+        useJapaneseBadge: false, // 使用日语假名标记（あいうえお...）代替数字，开启后会将 1、2、3... 改为 あ、い、う...
     },
     showCoverInContent: true, // 在文章内容页显示文章封面
     generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
@@ -245,16 +269,42 @@ export const siteConfig: SiteConfig = {
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
     src: {
         desktop: [
-            "/assets/desktop-banner/1.webp",
-            "/assets/desktop-banner/2.webp",
-            "/assets/desktop-banner/3.webp",
-            "/assets/desktop-banner/4.webp",
+            "/assets/desktop-banner/背景/1.png",
+            "/assets/desktop-banner/背景/2.png",
+            "/assets/desktop-banner/背景/3.png",
+            "/assets/desktop-banner/背景/4.png",
+            "/assets/desktop-banner/背景/5.png",
+            "/assets/desktop-banner/背景/6.png",
+            "/assets/desktop-banner/背景/7.png",
+            "/assets/desktop-banner/背景/8.png",
+            "/assets/desktop-banner/背景/9.png",
+            "/assets/desktop-banner/背景/10.jpg",
+            "/assets/desktop-banner/背景/11.jpg",
+            "/assets/desktop-banner/背景/12.jpg",
+            "/assets/desktop-banner/背景/13.jpg",
+            "/assets/desktop-banner/背景/14.jpg",
+            "/assets/desktop-banner/背景/15.jpg",
+            "/assets/desktop-banner/背景/16.jpg",
+            "/assets/desktop-banner/背景/17.jpg",
         ], // 桌面横幅图片
         mobile: [
-            "/assets/mobile-banner/1.webp",
-            "/assets/mobile-banner/2.webp",
-            "/assets/mobile-banner/3.webp",
-            "/assets/mobile-banner/4.webp",
+            "/assets/desktop-banner/背景/1.png",
+            "/assets/desktop-banner/背景/2.png",
+            "/assets/desktop-banner/背景/3.png",
+            "/assets/desktop-banner/背景/4.png",
+            "/assets/desktop-banner/背景/5.png",
+            "/assets/desktop-banner/背景/6.png",
+            "/assets/desktop-banner/背景/7.png",
+            "/assets/desktop-banner/背景/8.png",
+            "/assets/desktop-banner/背景/9.png",
+            "/assets/desktop-banner/背景/10.jpg",
+            "/assets/desktop-banner/背景/11.jpg",
+            "/assets/desktop-banner/背景/12.jpg",
+            "/assets/desktop-banner/背景/13.jpg",
+            "/assets/desktop-banner/背景/14.jpg",
+            "/assets/desktop-banner/背景/15.jpg",
+            "/assets/desktop-banner/背景/16.jpg",
+            "/assets/desktop-banner/背景/17.jpg",
         ], // 移动横幅图片
     }, // 使用本地横幅图片
     position: "center", // 壁纸位置，等同于 object-position
@@ -270,43 +320,43 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 export const navBarConfig: NavBarConfig = {
     links: [
         LinkPreset.Home,
-        LinkPreset.Archive,
+        // LinkPreset.Archive,
         // 支持自定义导航栏链接，支持多级菜单
-        {
-            name: "Links",
-            url: "/links/",
-            icon: "material-symbols:link",
-            children: [
-                {
-                    name: "GitHub",
-                    url: "https://github.com/LyraVoid/Mizuki",
-                    external: true,
-                    icon: "fa7-brands:github",
-                },
-                {
-                    name: "Bilibili",
-                    url: "https://space.bilibili.com/701864046",
-                    external: true,
-                    icon: "fa7-brands:bilibili",
-                },
-                {
-                    name: "Gitee",
-                    url: "https://gitee.com/matsuzakayuki/Mizuki",
-                    external: true,
-                    icon: "mdi:git",
-                },
-            ],
-        },
+        // {
+        //     name: "Links",
+        //     url: "/links/",
+        //     icon: "material-symbols:link",
+        //     children: [
+        //         {
+        //             name: "GitHub",
+        //             url: "https://github.com/LyraVoid/Mizuki",
+        //             external: true,
+        //             icon: "fa7-brands:github",
+        //         },
+        //         {
+        //             name: "Bilibili",
+        //             url: "https://space.bilibili.com/701864046",
+        //             external: true,
+        //             icon: "fa7-brands:bilibili",
+        //         },
+        //         {
+        //             name: "Gitee",
+        //             url: "https://gitee.com/matsuzakayuki/Mizuki",
+        //             external: true,
+        //             icon: "mdi:git",
+        //         },
+        //     ],
+        // },
         {
             name: "My",
             url: "/content/",
             icon: "material-symbols:person",
             children: [
-                {
-                    name: "Anime",
-                    url: "/anime/",
-                    icon: "material-symbols:movie",
-                },
+                // {
+                //     name: "Anime",
+                //     url: "/anime/",
+                //     icon: "material-symbols:movie",
+                // },
                 {
                     name: "Diary",
                     url: "/diary/",
@@ -317,53 +367,68 @@ export const navBarConfig: NavBarConfig = {
                     url: "/albums/",
                     icon: "material-symbols:photo-library",
                 },
-                {
-                    name: "Devices",
-                    url: "/devices/",
-                    icon: "material-symbols:devices",
-                    external: false,
-                },
+                // {
+                //     name: "Devices",
+                //     url: "/devices/",
+                //     icon: "material-symbols:devices",
+                //     external: false,
+                // },
             ],
         },
         {
-            name: "About",
-            url: "/content/",
-            icon: "material-symbols:info",
-            children: [
-                {
-                    name: "About",
-                    url: "/about/",
-                    icon: "material-symbols:person",
-                },
-                {
-                    name: "Friends",
-                    url: "/friends/",
-                    icon: "material-symbols:group",
-                },
-            ],
+            name: "关于我",
+            url: "/about/",
+            icon: "material-symbols:person",
         },
+        // {
+        //     name: "Projects",
+        //     url: "/projects/",
+        //     icon: "material-symbols:work",
+        // },
         {
-            name: "Others",
-            url: "#",
-            icon: "material-symbols:more-horiz",
-            children: [
-                {
-                    name: "Projects",
-                    url: "/projects/",
-                    icon: "material-symbols:work",
-                },
-                {
-                    name: "Skills",
-                    url: "/skills/",
-                    icon: "material-symbols:psychology",
-                },
-                {
-                    name: "Timeline",
-                    url: "/timeline/",
-                    icon: "material-symbols:timeline",
-                },
-            ],
+            name: "技能",
+            url: "/skills/",
+            icon: "material-symbols:psychology",
         },
+        // {
+        //     name: "About",
+        //     url: "/content/",
+        //     icon: "material-symbols:info",
+        //     children: [
+        //         {
+        //             name: "About",
+        //             url: "/about/",
+        //             icon: "material-symbols:person",
+        //         },
+        //         {
+        //             name: "Friends",
+        //             url: "/friends/",
+        //             icon: "material-symbols:group",
+        //         },
+        //     ],
+        // },
+        // {
+        //     name: "Others",
+        //     url: "#",
+        //     icon: "material-symbols:more-horiz",
+        //     children: [
+        //         {
+        //             name: "Projects",
+        //             url: "/projects/",
+        //             icon: "material-symbols:work",
+        //         },
+        //         {
+        //             name: "Skills",
+        //             url: "/skills/",
+        //             icon: "material-symbols:psychology",
+        //         },
+        //         {
+        //             name: "Timeline",
+        //             url: "/timeline/",
+        //             icon: "material-symbols:timeline",
+        //         },
+        //     ],
+        // },
     ],
 };
 
@@ -501,13 +566,15 @@ export const musicPlayerConfig: MusicPlayerConfig = {
     enable: true, // 启用音乐播放器功能
     showFloatingPlayer: true, // 显示悬浮播放器 UI
     floatingEntryMode: "fab", // 悬浮入口模式："default" 为独立悬浮播放器，"fab" 为集成到通用 FAB 组
-    mode: "local", // 音乐播放器模式，可选 "local" 或 "meting"
+    mode: "meting", // 音乐播放器模式，可选 "local" 或 "meting"
     meting_api:
         "https://meting.mysqil.com/api?server=:server&type=:type&id=:id&auth=:auth&r=:r", // Meting API 地址
-    id: "14164869977", // 歌单ID
+    id: "17897464409", // 歌单ID
     server: "netease", // 音乐源服务器。有的meting的api源支持更多平台,一般来说,netease=网易云音乐, tencent=QQ音乐, kugou=酷狗音乐, xiami=虾米音乐, baidu=百度音乐
     type: "playlist", // 播单类型
+
 };
+
 
 export const footerConfig: FooterConfig = {
     enable: false, // 是否启用Footer HTML注入功能
