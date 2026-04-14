@@ -411,7 +411,7 @@ export const skillsData: Skill[] = [
         icon: "logos:spring-icon",
         category: "backend",
         level: "beginner",
-        experience: { years: 0, months: 1 },
+        experience: { years: 0, months: 6 },
         // projects: ["enterprise-system", "rest-api"],
         color: "#6DB33F",
     },
