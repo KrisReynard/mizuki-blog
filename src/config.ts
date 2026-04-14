@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
     title: "KrisReynar的个人网站",
     subtitle: "KrisReynard's personal website",
     siteURL: "https://krisreynard.top/", // 请替换为你的站点URL，以斜杠结尾
-    siteStartDate: "2025-01-01", // 站点开始运行日期，用于站点统计组件计算运行天数
+    siteStartDate: "2026-01-01", // 站点开始运行日期，用于站点统计组件计算运行天数
 
     timeZone: SITE_TIMEZONE,
 
@@ -125,42 +125,42 @@ export const siteConfig: SiteConfig = {
         // 支持单张图片或图片数组，当数组长度 > 1 时自动启用轮播
         src: {
             desktop: [
-                "/assets/desktop-banner/背景/1.png",
-                "/assets/desktop-banner/背景/2.png",
-                "/assets/desktop-banner/背景/3.png",
-                "/assets/desktop-banner/背景/4.png",
-                "/assets/desktop-banner/背景/5.png",
-                "/assets/desktop-banner/背景/6.png",
-                "/assets/desktop-banner/背景/7.png",
-                "/assets/desktop-banner/背景/8.png",
-                "/assets/desktop-banner/背景/9.png",
-                "/assets/desktop-banner/背景/10.jpg",
-                "/assets/desktop-banner/背景/11.jpg",
-                "/assets/desktop-banner/背景/12.jpg",
-                "/assets/desktop-banner/背景/13.jpg",
-                "/assets/desktop-banner/背景/14.jpg",
-                "/assets/desktop-banner/背景/15.jpg",
-                "/assets/desktop-banner/背景/16.jpg",
-                "/assets/desktop-banner/背景/17.jpg",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
             ], // 桌面横幅图片
             mobile: [
-                "/assets/desktop-banner/背景/1.png",
-                "/assets/desktop-banner/背景/2.png",
-                "/assets/desktop-banner/背景/3.png",
-                "/assets/desktop-banner/背景/4.png",
-                "/assets/desktop-banner/背景/5.png",
-                "/assets/desktop-banner/背景/6.png",
-                "/assets/desktop-banner/背景/7.png",
-                "/assets/desktop-banner/背景/8.png",
-                "/assets/desktop-banner/背景/9.png",
-                "/assets/desktop-banner/背景/10.jpg",
-                "/assets/desktop-banner/背景/11.jpg",
-                "/assets/desktop-banner/背景/12.jpg",
-                "/assets/desktop-banner/背景/13.jpg",
-                "/assets/desktop-banner/背景/14.jpg",
-                "/assets/desktop-banner/背景/15.jpg",
-                "/assets/desktop-banner/背景/16.jpg",
-                "/assets/desktop-banner/背景/17.jpg",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
+                "/assets/desktop-banner/背景/.webp",
             ], // 移动横幅图片
         }, // 使用本地横幅图片
 
@@ -172,7 +172,7 @@ export const siteConfig: SiteConfig = {
         },
 
         waves: {
-            enable: true, // 是否启用水波纹效果（注意：此功能性能开销较大）
+            enable: false, // 是否启用水波纹效果（注意：此功能性能开销较大）
             performanceMode: true, // 性能模式：减少动画复杂度(性能提升40%)
             mobileDisable: false, // 移动端禁用
         },
@@ -269,42 +269,42 @@ export const siteConfig: SiteConfig = {
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
     src: {
         desktop: [
-            "/assets/desktop-banner/背景/1.png",
-            "/assets/desktop-banner/背景/2.png",
-            "/assets/desktop-banner/背景/3.png",
-            "/assets/desktop-banner/背景/4.png",
-            "/assets/desktop-banner/背景/5.png",
-            "/assets/desktop-banner/背景/6.png",
-            "/assets/desktop-banner/背景/7.png",
-            "/assets/desktop-banner/背景/8.png",
-            "/assets/desktop-banner/背景/9.png",
-            "/assets/desktop-banner/背景/10.jpg",
-            "/assets/desktop-banner/背景/11.jpg",
-            "/assets/desktop-banner/背景/12.jpg",
-            "/assets/desktop-banner/背景/13.jpg",
-            "/assets/desktop-banner/背景/14.jpg",
-            "/assets/desktop-banner/背景/15.jpg",
-            "/assets/desktop-banner/背景/16.jpg",
-            "/assets/desktop-banner/背景/17.jpg",
+            "/assets/desktop-banner/背景/1.webp",
+            "/assets/desktop-banner/背景/2.webp",
+            "/assets/desktop-banner/背景/3.webp",
+            "/assets/desktop-banner/背景/4.webp",
+            "/assets/desktop-banner/背景/5.webp",
+            "/assets/desktop-banner/背景/6.webp",
+            "/assets/desktop-banner/背景/7.webp",
+            "/assets/desktop-banner/背景/8.webp",
+            "/assets/desktop-banner/背景/9.webp",
+            "/assets/desktop-banner/背景/10.webp",
+            "/assets/desktop-banner/背景/11.webp",
+            "/assets/desktop-banner/背景/12.webp",
+            "/assets/desktop-banner/背景/13.webp",
+            "/assets/desktop-banner/背景/14.webp",
+            "/assets/desktop-banner/背景/15.webp",
+            "/assets/desktop-banner/背景/16.webp",
+            "/assets/desktop-banner/背景/17.webp",
         ], // 桌面横幅图片
         mobile: [
-            "/assets/desktop-banner/背景/1.png",
-            "/assets/desktop-banner/背景/2.png",
-            "/assets/desktop-banner/背景/3.png",
-            "/assets/desktop-banner/背景/4.png",
-            "/assets/desktop-banner/背景/5.png",
-            "/assets/desktop-banner/背景/6.png",
-            "/assets/desktop-banner/背景/7.png",
-            "/assets/desktop-banner/背景/8.png",
-            "/assets/desktop-banner/背景/9.png",
-            "/assets/desktop-banner/背景/10.jpg",
-            "/assets/desktop-banner/背景/11.jpg",
-            "/assets/desktop-banner/背景/12.jpg",
-            "/assets/desktop-banner/背景/13.jpg",
-            "/assets/desktop-banner/背景/14.jpg",
-            "/assets/desktop-banner/背景/15.jpg",
-            "/assets/desktop-banner/背景/16.jpg",
-            "/assets/desktop-banner/背景/17.jpg",
+            "/assets/desktop-banner/背景/1.webp",
+            "/assets/desktop-banner/背景/2.webp",
+            "/assets/desktop-banner/背景/3.webp",
+            "/assets/desktop-banner/背景/4.webp",
+            "/assets/desktop-banner/背景/5.webp",
+            "/assets/desktop-banner/背景/6.webp",
+            "/assets/desktop-banner/背景/7.webp",
+            "/assets/desktop-banner/背景/8.webp",
+            "/assets/desktop-banner/背景/9.webp",
+            "/assets/desktop-banner/背景/10.webp",
+            "/assets/desktop-banner/背景/11.webp",
+            "/assets/desktop-banner/背景/12.webp",
+            "/assets/desktop-banner/背景/13.webp",
+            "/assets/desktop-banner/背景/14.webp",
+            "/assets/desktop-banner/背景/15.webp",
+            "/assets/desktop-banner/背景/16.webp",
+            "/assets/desktop-banner/背景/17.webp",
         ], // 移动横幅图片
     }, // 使用本地横幅图片
     position: "center", // 壁纸位置，等同于 object-position
@@ -433,7 +433,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-    avatar: "assets/images/my_avatar.jpg", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
+    avatar: "assets/images/my_avatar.webp", // 相对于 /src 目录。如果以 '/' 开头，则相对于 /public 目录
     name: "Kris_Reynard",
     bio: "平凡的人",
     typewriter: {
