@@ -206,10 +206,10 @@ class MusicPlayerStore {
             const playPromise = this.audio?.play();
             if (playPromise !== undefined) {
                 playPromise.catch((e) => {
+                    // 现代浏览器会严格拦截未发生过交互的自动声音播放
+                    // 将记录该状态并在下次有效点击时恢复播放，不再强行弹窗报错
                     this.state.autoplayFailed = true;
                     this.state.isPlaying = false;
-                    this.state.showError = true;
-                    this.state.errorMessage = "自动播放失败，请点击页面以开始播放";
                     this.broadcastState();
                 });
             }
@@ -242,13 +242,17 @@ class MusicPlayerStore {
                     playPromise
                         .then(() => {
                             this.state.autoplayFailed = false;
+                            this.state.showError = false; // 成功播放后隐藏错误提示
+                            this.broadcastState();
                         })
                         .catch(() => { });
                 }
             }
         };
-        document.addEventListener("click", handler, { once: true });
-        document.addEventListener("keydown", handler, { once: true });
+        // 移除 { once: true }，因为用户可能在音乐数据加载完之前就已经点击了页面，
+        // 导致事件被提前消耗而失效。让它保留监听，直到播放成功恢复即可。
+        document.addEventListener("click", handler);
+        document.addEventListener("keydown", handler);
         this.unregisterInteraction = () => {
             document.removeEventListener("click", handler);
             document.removeEventListener("keydown", handler);
