@@ -54,6 +54,7 @@ if (!hasDesktopImages && !hasMobileImages) {return null;}
 const isCarouselEnabled = config.carousel?.enable && 
 	(imageSources.desktop.length > 1 || imageSources.mobile.length > 1);
 const carouselInterval = config.carousel?.interval || 5;
+const isCarouselRandom = config.carousel?.random || false;
 
 // 样式配置
 const position = config.position || "center";
@@ -185,7 +186,7 @@ const renderGroups = [
 </div>
 
 {isCarouselEnabled && (
-	<script is:inline define:vars={{ carouselInterval }}>
+	<script is:inline define:vars={{ carouselInterval, isCarouselRandom }}>
 		function initFullscreenWallpaperCarousel() {
 			const container = document.querySelector('[data-fullscreen-wallpaper]');
 			if (!container) {return;}
@@ -196,12 +197,19 @@ const renderGroups = [
 			}
 
 			const STORAGE_KEY = 'mizuki_wallpaper_index';
-			const savedIndex = parseInt(sessionStorage.getItem(STORAGE_KEY) || '0');
+			let savedIndex = parseInt(sessionStorage.getItem(STORAGE_KEY) || '-1');
 
 			const groups = [
 				container.querySelectorAll('.hidden.md\\:block [data-carousel-item]'),
 				container.querySelectorAll('.block.md\\:hidden [data-carousel-item]')
 			];
+
+			if (savedIndex === -1 && isCarouselRandom) {
+				const maxLen = Math.max(...groups.map(g => g.length));
+				savedIndex = maxLen > 1 ? Math.floor(Math.random() * maxLen) : 0;
+			} else if (savedIndex === -1) {
+				savedIndex = 0;
+			}
 
 			const state = groups.map(items => {
 				const safeIndex = (savedIndex >= 0 && savedIndex < items.length) ? savedIndex : 0;
@@ -225,7 +233,15 @@ const renderGroups = [
 			// 切换下一张
 			function switchNextImage(stateItem) {
 				const { items, currentIndex } = stateItem;
-				const nextIndex = (currentIndex + 1) % items.length;
+				
+				let nextIndex;
+				if (isCarouselRandom && items.length > 1) {
+					do {
+						nextIndex = Math.floor(Math.random() * items.length);
+					} while (nextIndex === currentIndex);
+				} else {
+					nextIndex = (currentIndex + 1) % items.length;
+				}
 				
 				items[currentIndex].style.opacity = '0';
 				items[nextIndex].style.opacity = '1';

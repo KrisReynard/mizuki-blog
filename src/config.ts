@@ -169,6 +169,7 @@ export const siteConfig: SiteConfig = {
         carousel: {
             enable: true, // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
             interval: 5, // 轮播间隔时间（秒）
+            random: true, // 是否开启随机播放
         },
 
         waves: {
@@ -311,6 +312,7 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
     carousel: {
         enable: true, // 启用轮播
         interval: 10, // 轮播间隔时间（秒）
+        random: true, // 开启随机播放
     },
     zIndex: -1, // 层级，确保壁纸在背景层
     opacity: 0.8, // 壁纸透明度

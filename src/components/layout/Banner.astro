@@ -58,6 +58,8 @@ const carouselIntervalMs = Math.max(
 	1500,
 );
 
+const isCarouselRandom = siteConfig.banner.carousel?.random ?? false;
+
 // 淡入淡出时间：间隔的 40%，范围 500ms ~ 1500ms
 const fadeMs = Math.min(Math.max(Math.round(carouselIntervalMs * 0.4), 500), 1500);
 
@@ -82,6 +84,7 @@ const hasBannerLink = !!siteConfig.banner.credit.url;
 			data-desktop-count={desktopImages.length}
 			data-carousel-interval={carouselIntervalMs}
 			data-fade-ms={fadeMs}
+			data-random={isCarouselRandom ? "true" : "false"}
 		>
 			{/* 移动端：第一张图直接渲染，其余放入 template 延迟加载 */}
 			{mobileImages.length > 0 && (
@@ -409,7 +412,15 @@ const hasBannerLink = !!siteConfig.banner.credit.url;
 					var frames = window.__bannerCarouselFrames[slotClass];
 					if (!frames || frames.length === 0) return;
 					var currentIndex = window.__bannerCarouselIndex[type];
-					var nextIndex = (currentIndex + 1) % frames.length;
+					var isRandom = container.dataset.random === 'true';
+					var nextIndex;
+					if (isRandom && frames.length > 1) {
+						do {
+							nextIndex = Math.floor(Math.random() * frames.length);
+						} while (nextIndex === currentIndex);
+					} else {
+						nextIndex = (currentIndex + 1) % frames.length;
+					}
 					crossfadeToIndex(slotClass, totalCount, type, nextIndex);
 				}
 

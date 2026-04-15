@@ -148,8 +148,9 @@ export interface SiteConfig {
         }; // 支持单个图片、图片数组或分别设置桌面端和移动端图片
         position?: "top" | "center" | "bottom";
         carousel?: {
-            enable: boolean; // 是否启用轮播
+            enable: boolean; // 为 true 时：为多张图片启用轮播。为 false 时：从数组中随机显示一张图片
             interval: number; // 轮播间隔时间（秒）
+            random?: boolean; // 是否开启随机播放
         };
         waves?: {
             enable: boolean; // 是否启用水波纹效果
@@ -458,6 +459,7 @@ export interface FullscreenWallpaperConfig {
     carousel?: {
         enable: boolean; // 是否启用轮播
         interval: number; // 轮播间隔时间（秒）
+        random?: boolean; // 是否随机播放
     };
     zIndex?: number; // 层级，确保壁纸在合适的层级显示
     opacity?: number; // 壁纸透明度，0-1之间
